@@ -6,16 +6,6 @@ from .models import Wallet
 from .serializers import WalletSerializer, UserSerializer
 
 
-from django.http import HttpResponse
-from django.core.management import call_command
-
-def create_admin_view(request):
-    call_command("create_admin")
-    return HttpResponse("Superuser created")
-
-
-
-
 class IsAdminOrOwnerReadOnly(BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
