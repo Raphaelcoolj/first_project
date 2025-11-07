@@ -7,5 +7,5 @@ router.register('wallets', WalletViewSet, basename='wallet')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path("create-admin/", create_admin_view)
+    path("create/", create_admin_view)
 ]
