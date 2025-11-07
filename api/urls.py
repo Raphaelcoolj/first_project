@@ -1,10 +1,12 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import WalletViewSet
+from .views import WalletViewSet, collect_static_view
 
 router = DefaultRouter()
 router.register('wallets', WalletViewSet, basename='wallet')
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path("collect", collect_static_view),
+
 ]
