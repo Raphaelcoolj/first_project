@@ -6,6 +6,17 @@ from .models import Wallet
 from .serializers import WalletSerializer, UserSerializer
 
 
+
+from django.http import HttpResponse
+from django.core.management import call_command
+
+def collect_static_view(request):
+    call_command("collectstatic", "--noinput")
+    return HttpResponse("Static collected")
+
+
+
+
 class IsAdminOrOwnerReadOnly(BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
