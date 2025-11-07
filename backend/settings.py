@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 SECRET_KEY = os.getenv("SECRET_KEY")  # from Render environment variables
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = False
 ALLOWED_HOSTS = [os.getenv("ALLOWED_HOSTS", "crypto-backend-k32x.onrender.com")]
 
 # REST Framework
